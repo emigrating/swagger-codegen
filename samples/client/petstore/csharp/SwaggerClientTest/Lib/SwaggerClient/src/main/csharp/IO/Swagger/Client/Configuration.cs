@@ -25,7 +25,6 @@ namespace IO.Swagger.Client
         /// <param name="tempFolderPath">Temp folder path</param>
         /// <param name="dateTimeFormat">DateTime format string</param>
         /// <param name="timeout">HTTP connection timeout (in milliseconds)</param>
-        /// <param name="userAgent">HTTP user agent</param>
         public Configuration(ApiClient apiClient = null,
                              Dictionary<String, String> defaultHeader = null,
                              string username = null,
@@ -270,11 +269,13 @@ namespace IO.Swagger.Client
         public static String ToDebugReport()
         {
             String report = "C# SDK (IO.Swagger) Debug Report:\n";
+            
             report += "    OS: " + Environment.OSVersion + "\n";
             report += "    .NET Framework Version: " + Assembly
                      .GetExecutingAssembly()
                      .GetReferencedAssemblies()
                      .Where(x => x.Name == "System.Core").First().Version.ToString()  + "\n";
+            
             report += "    Version of the API: 1.0.0\n";
             report += "    SDK Package Version: 1.0.0\n";
 
@@ -282,3 +283,4 @@ namespace IO.Swagger.Client
         }
     }
 }
+
